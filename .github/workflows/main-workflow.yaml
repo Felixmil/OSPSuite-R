@@ -11,7 +11,7 @@ permissions: write-all
 jobs:
   bump-dev-version: # only do that when actually merging in main/develop branch
     if: github.event_name != 'pull_request'
-    uses: Felixmil/Workflows/.github/workflows/bump_dev_version_tag_branch.yaml@support-renv-in-main-wf
+    uses: Felixmil/Workflows/.github/workflows/bump_dev_version_tag_branch.yaml@fix-pkgdown-covr
     with:
       app-id: ${{ vars.VERSION_BUMPER_APPID }}
     secrets:
@@ -20,16 +20,16 @@ jobs:
   R-CMD-Check:
     if: ${{ !cancelled() }}
     needs: [bump-dev-version]
-    uses: Felixmil/Workflows/.github/workflows/R-CMD-check-build.yaml@support-renv-in-main-wf
+    uses: Felixmil/Workflows/.github/workflows/R-CMD-check-build.yaml@fix-pkgdown-covr
 
   test-coverage:
     if: ${{ !cancelled() }}
     needs: [bump-dev-version]
-    uses: Felixmil/Workflows/.github/workflows/test-coverage.yaml@support-renv-in-main-wf
+    uses: Felixmil/Workflows/.github/workflows/test-coverage.yaml@fix-pkgdown-covr
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   pkgdown:
     if: ${{ !cancelled() }}
     needs: [bump-dev-version]
-    uses: Felixmil/Workflows/.github/workflows/pkgdown.yaml@support-renv-in-main-wf
+    uses: Felixmil/Workflows/.github/workflows/pkgdown.yaml@fix-pkgdown-covr
