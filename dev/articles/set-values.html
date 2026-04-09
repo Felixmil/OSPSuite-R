@@ -21,7 +21,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ospsuite</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">12.3.2.9006</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">12.4.2.9006</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,6 +49,7 @@
     <li><a class="dropdown-item" href="../articles/observed-data.html">Observed data</a></li>
     <li><a class="dropdown-item" href="../articles/data-combined.html">Working with `DataCombined` class</a></li>
     <li><a class="dropdown-item" href="../articles/data-combined-plotting.html">Visualizations with `DataCombined`</a></li>
+    <li><a class="dropdown-item" href="../articles/plotting-with-ospsuite-plots.html">Plotting with ospsuite.plots</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Miscellaneous</h6></li>
     <li><a class="dropdown-item" href="../articles/efficient-calculations.html">Efficient calculation</a></li>
@@ -134,6 +135,9 @@ documentation</a> for more information.</p>
 <span><span class="co">#&gt;   • Quantity Type: Parameter</span></span>
 <span><span class="co">#&gt;   • Path: Organism|Liver|Volume</span></span>
 <span><span class="co">#&gt;   • Value: 2.17 [l]</span></span>
+<span><span class="co">#&gt;   • Value Origin: Publication-ICRP, 2002. Basic Anatomical and Physiological</span></span>
+<span><span class="co">#&gt;   Data for Use in Radiological Protection Reference Values. ICRP Publication</span></span>
+<span><span class="co">#&gt;   89. Ann. ICRP 32 (3-4). https://doi.org/10.1016/0146-6453(79)90123-4</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Formula</span> ──</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -152,6 +156,10 @@ via <code>parameter$formulaString</code>.</p>
 <span><span class="co">#&gt;   • Quantity Type: Parameter</span></span>
 <span><span class="co">#&gt;   • Path: Organism|Liver|Interstitial|Volume</span></span>
 <span><span class="co">#&gt;   • Value: 0.35 [l]</span></span>
+<span><span class="co">#&gt;   • Value Origin: Publication-Willmann S, Lippert J, Sevestre M, Solodenko J,</span></span>
+<span><span class="co">#&gt;   Fois F, Schmitt W. PK-Sim®: a physiologically based pharmacokinetic</span></span>
+<span><span class="co">#&gt;   ‘whole-body’ model. Biosilico. 2003; 1 (4): 121-124.</span></span>
+<span><span class="co">#&gt;   http://dx.doi.org/10.1016/S1478-5382%2803%2902342-4</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Formula</span> ──</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -304,6 +312,10 @@ parameters will be destroyed.</p>
 <span><span class="co">#&gt;   • Quantity Type: Parameter</span></span>
 <span><span class="co">#&gt;   • Path: Organism|Liver|Interstitial|Volume</span></span>
 <span><span class="co">#&gt;   • Value: 0.35 [l]</span></span>
+<span><span class="co">#&gt;   • Value Origin: Publication-Willmann S, Lippert J, Sevestre M, Solodenko J,</span></span>
+<span><span class="co">#&gt;   Fois F, Schmitt W. PK-Sim®: a physiologically based pharmacokinetic</span></span>
+<span><span class="co">#&gt;   ‘whole-body’ model. Biosilico. 2003; 1 (4): 121-124.</span></span>
+<span><span class="co">#&gt;   http://dx.doi.org/10.1016/S1478-5382%2803%2902342-4</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Formula</span> ──</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -321,6 +333,10 @@ parameters will be destroyed.</p>
 <span><span class="co">#&gt;   • Quantity Type: Parameter</span></span>
 <span><span class="co">#&gt;   • Path: Organism|Liver|Interstitial|Volume</span></span>
 <span><span class="co">#&gt;   • Value: 1.00 [l]</span></span>
+<span><span class="co">#&gt;   • Value Origin: Publication-Willmann S, Lippert J, Sevestre M, Solodenko J,</span></span>
+<span><span class="co">#&gt;   Fois F, Schmitt W. PK-Sim®: a physiologically based pharmacokinetic</span></span>
+<span><span class="co">#&gt;   ‘whole-body’ model. Biosilico. 2003; 1 (4): 121-124.</span></span>
+<span><span class="co">#&gt;   http://dx.doi.org/10.1016/S1478-5382%2803%2902342-4</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Formula</span> ──</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -338,6 +354,10 @@ constant value:</p>
 <span><span class="co">#&gt;   • Quantity Type: Parameter</span></span>
 <span><span class="co">#&gt;   • Path: Organism|Liver|Interstitial|Volume</span></span>
 <span><span class="co">#&gt;   • Value: 1.00 [l]</span></span>
+<span><span class="co">#&gt;   • Value Origin: Publication-Willmann S, Lippert J, Sevestre M, Solodenko J,</span></span>
+<span><span class="co">#&gt;   Fois F, Schmitt W. PK-Sim®: a physiologically based pharmacokinetic</span></span>
+<span><span class="co">#&gt;   ‘whole-body’ model. Biosilico. 2003; 1 (4): 121-124.</span></span>
+<span><span class="co">#&gt;   http://dx.doi.org/10.1016/S1478-5382%2803%2902342-4</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Formula</span> ──</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -355,6 +375,10 @@ constant value:</p>
 <span><span class="co">#&gt;   • Quantity Type: Parameter</span></span>
 <span><span class="co">#&gt;   • Path: Organism|Liver|Interstitial|Volume</span></span>
 <span><span class="co">#&gt;   • Value: 0.35 [l]</span></span>
+<span><span class="co">#&gt;   • Value Origin: Publication-Willmann S, Lippert J, Sevestre M, Solodenko J,</span></span>
+<span><span class="co">#&gt;   Fois F, Schmitt W. PK-Sim®: a physiologically based pharmacokinetic</span></span>
+<span><span class="co">#&gt;   ‘whole-body’ model. Biosilico. 2003; 1 (4): 121-124.</span></span>
+<span><span class="co">#&gt;   http://dx.doi.org/10.1016/S1478-5382%2803%2902342-4</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Formula</span> ──</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -425,7 +449,8 @@ re-activate the RHS formula after switching it off.</p>
 <span></span>
 <span><span class="co"># Switching it on is not supported</span></span>
 <span><span class="va">stateVariableParam</span><span class="op">$</span><span class="va">isStateVariable</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span>
-<span><span class="co">#&gt; Error in (function (value) : Creating a RHS Formula is not supported at the moment. This should be done in MoBi.</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Creating a RHS Formula is not supported at the moment. This should be done in MoBi.</span></span></code></pre></div>
 <p>An example how to set the initial values of molecules in all
 containers to a certain value:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
@@ -443,7 +468,7 @@ containers to a certain value:</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://www.open-systems-pharmacology.org/" class="external-link"><img src="https://avatars.githubusercontent.com/u/25098323?s=33" alt="Open System Pharmacology Logo">Open Systems Pharmacology</a>, <a href="https://github.com/msevestre" class="external-link">Michael Sevestre</a>, <a href="https://github.com/PavelBal" class="external-link">Pavel Balazki</a>, <a href="https://github.com/Yuri05" class="external-link">Juri Solodenko</a>, <a href="https://sites.google.com/site/indrajeetspatilmorality/" class="external-link">Indrajeet Patil</a>, Felix MIL.</p>
+  <p>Developed by <a href="https://www.open-systems-pharmacology.org/" class="external-link"><img src="https://avatars.githubusercontent.com/u/25098323?s=33" alt="Open System Pharmacology Logo">Open Systems Pharmacology</a>, <a href="https://github.com/msevestre" class="external-link">Michael Sevestre</a>, <a href="https://github.com/PavelBal" class="external-link">Pavel Balazki</a>, <a href="https://github.com/Yuri05" class="external-link">Juri Solodenko</a>, <a href="https://indrajeetpatil.github.io/" class="external-link">Indrajeet Patil</a>, Felix MIL.</p>
 </div>
 
 <div class="pkgdown-footer-right">

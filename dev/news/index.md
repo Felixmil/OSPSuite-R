@@ -2,6 +2,179 @@
 
 ## ospsuite (development version)
 
+### Minor improvements and bug fixes
+
+- [`plotTimeProfile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotTimeProfile.md)
+  now defaults to `showLegendPerDataset = "all"`, showing individual
+  dataset names for both observed and simulated data by default
+  ([\#1844](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1844)).
+- `DataSet$setValues()` and plotting functions
+  ([`plotTimeProfile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotTimeProfile.md),
+  [`plotPredictedVsObserved()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotPredictedVsObserved.md),
+  [`plotResidualsVsCovariate()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotResidualsVsCovariate.md),
+  [`plotResidualsAsHistogram()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotResidualsAsHistogram.md),
+  [`plotQuantileQuantilePlot()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotQuantileQuantilePlot.md))
+  now warn and replace negative `yErrorValues` with `NA` instead of
+  silently accepting them
+  ([\#1756](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1756)).
+- Fixed
+  [`plotPredictedVsObserved()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotPredictedVsObserved.md)
+  error bar mapping: when `predictedAxis = "x"`, error bars are now
+  correctly placed on the y-axis
+  ([\#1715](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1715)).
+
+## ospsuite 12.4.2
+
+### Major changes
+
+- Added five new plotting functions powered by
+  [ospsuite.plots](https://www.open-systems-pharmacology.org/OSPSuite.Plots/):
+  [`plotTimeProfile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotTimeProfile.md),
+  [`plotPredictedVsObserved()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotPredictedVsObserved.md),
+  [`plotResidualsVsCovariate()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotResidualsVsCovariate.md),
+  [`plotResidualsAsHistogram()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotResidualsAsHistogram.md),
+  and
+  [`plotQuantileQuantilePlot()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotQuantileQuantilePlot.md).
+  These functions accept `DataCombined` objects or data frames and
+  handle mixed error types and unit conversion directly, without
+  requiring data preprocessing
+  ([\#1652](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1652)).
+- The
+  [tlf](https://github.com/open-systems-pharmacology/tlf-library)-based
+  plotting functions
+  [`plotIndividualTimeProfile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotIndividualTimeProfile.md),
+  [`plotPopulationTimeProfile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotPopulationTimeProfile.md),
+  [`plotObservedVsSimulated()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotObservedVsSimulated.md),
+  [`plotResidualsVsTime()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotResidualsVsTime.md),
+  and
+  [`plotResidualsVsSimulated()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotResidualsVsSimulated.md)
+  are now soft-deprecated in favor of the
+  [ospsuite.plots](https://www.open-systems-pharmacology.org/OSPSuite.Plots/)-based
+  equivalents and will be removed in version 14.0.
+  ([\#1739](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1739))
+
+### Minor improvements and bug fixes
+
+- Fixed
+  [`validateDimension()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/validateDimension.md)
+  error message not showing the actual dimension name
+  ([\#1822](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1822)).
+- Plotting functions based on {ospsuite.plots} now produce a warning and
+  return `NULL` when `DataCombined` has no plottable entries
+  ([\#1709](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1709)).
+- Updated
+  [ospsuite.plots](https://www.open-systems-pharmacology.org/OSPSuite.Plots/)
+  option key references to match camelCase naming convention (e.g.,
+  `watermarkEnabled`, `defaultPercentiles`)
+  ([\#1818](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1818)).
+- Added
+  [`addResidualColumn()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/addResidualColumn.md)
+  to unify residual computation across
+  [`calculateResiduals()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/calculateResiduals.md)
+  and the residual plot functions. Supports `"log"`, `"linear"` (or
+  `"lin"`), and `"ratio"` scaling. For log scaling, zero or negative
+  values now produce `NaN` with a warning instead of an epsilon-based
+  approximation
+  ([\#1713](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1713)).
+- Plotting functions now document all passable `...` arguments via
+  `@inheritDotParams`, improving IDE autocompletion for
+  [`plotPredictedVsObserved()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotPredictedVsObserved.md)
+  and
+  [`plotResidualsAsHistogram()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotResidualsAsHistogram.md)
+  ([\#1817](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1817)).
+- Added
+  [`dataSetsFromDataFrame()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/dataSetsFromDataFrame.md)
+  function that creates a list of `DataSet` objects from a `data.frame`
+  with the same structure as returned by
+  [`dataSetToDataFrame()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/dataSetToDataFrame.md).
+  This is the inverse operation of
+  [`dataSetToDataFrame()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/dataSetToDataFrame.md)
+  and allows creating `DataSet` objects from data frames without
+  requiring an Excel file.
+  ([\#1495](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1495))
+- Added
+  [`populationFromDataFrame()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/populationFromDataFrame.md)
+  function to create a `Population` object from a data.frame, the
+  reverse of
+  [`populationToDataFrame()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/populationToDataFrame.md).
+  If no `IndividualId` column is present, sequential IDs are
+  automatically generated.
+  ([\#1807](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1807))
+- [`loadDataSetsFromExcel()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/loadDataSetsFromExcel.md)
+  now accepts a `sheets` parameter to specify which sheets to load. When
+  `sheets = NULL` (default), the function uses sheets defined in the
+  importer configuration. If the configuration has no sheets defined,
+  all sheets are loaded. When `sheets` is a character vector, those
+  specific sheets are loaded, overriding any sheets in the
+  configuration. The `importAllSheets` parameter is now deprecated and
+  will be removed in version 14
+  ([\#1760](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1760)).
+- [`toDisplayUnit()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/toDisplayUnit.md)
+  now accepts an optional `unit` parameter to specify the source unit of
+  the values, consistent with
+  [`toUnit()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/toUnit.md)
+  and
+  [`toBaseUnit()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/toBaseUnit.md)
+  functions. When not specified, values are assumed to be in base unit
+  (maintaining backward compatibility).
+  ([\#1762](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1762))
+- [`addOutputs()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/addOutputs.md)
+  and
+  [`setOutputs()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/setOutputs.md)
+  now throw an error by default when the provided path is not found.
+  This behavior can be disabled by setting `stopIfNotFound = FALSE`
+  ([\#1734](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1734)).
+- `ospUnits$Dimensionless$Unitless` and `ospUnits$Fraction$Unitless` now
+  return an empty string `""` instead of the literal string `"Unitless"`
+  ([\#1754](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1754)).
+- Added read-only `valueOrigin` property to `Quantity` class (including
+  `Parameter` and other derived classes) to access the value origin from
+  the underlying .NET object. This is useful for generating automated
+  reports that track parameter value provenance
+  ([\#1751](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1751)).
+- [`createImporterConfigurationForFile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/createImporterConfigurationForFile.md)
+  now automatically sets the `sheets` attribute when a `sheet` parameter
+  is provided, eliminating the need to manually set it before using
+  [`loadDataSetsFromExcel()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/loadDataSetsFromExcel.md)
+  ([\#1755](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1755)).
+- Fixed
+  [`getSteadyState()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/getSteadyState.md)
+  to correctly apply `lowerThreshold` for both positive and negative
+  values. The threshold now filters values in the interval
+  `[-lowerThreshold, lowerThreshold]` instead of only values below the
+  threshold
+  ([\#1792](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1792)).
+- [`runSimulations()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/runSimulations.md)
+  now throws an error if any simulation has no output selections
+  defined, instead of silently returning empty results.
+  ([\#1404](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1404))
+- [`exportResultsToCSV()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/exportResultsToCSV.md)
+  now validates that the input is a single `SimulationResults` object
+  and rejects lists of results, preventing downstream .NET interop
+  failures
+  ([\#1752](https://github.com/open-systems-pharmacology/ospsuite-r/issues/1752)).
+
+## ospsuite 12.4.1
+
+### Breaking changes
+
+- R version \>=4.4 is required
+- ospsuite.utils version \>=1.10.0 is required
+- This package no longer re-exports `%||%`. `ospsuite::%||%` will not
+  work.
+
+### Major changes
+
+- Computational core libraries updated to match OSPS Version 12 update 2
+  release.
+
+### Minor changes
+
+- Using native operator `%||%` instead of importing from the
+  `ospsuite.utils` package.
+
+## ospsuite 12.4.0
+
 ### Major changes
 
 - Added support for macOS (both Intel and Apple Silicon architectures).
@@ -43,7 +216,10 @@
 
 ### Breaking changes
 
-- ´{ospsuite}`now requires`{ospsuite.utils}\` version \>= 1.7.0.
+- [ospsuite](https://github.com/open-systems-pharmacology/ospsuite-r)
+  now requires
+  [ospsuite.utils](https://github.com/open-systems-pharmacology/OSPSuite.RUtils)
+  version \>= 1.7.0.
 - Classes `SimulationBatchRunValues` and `SimulationBatchOptions` are
   not exported any more. They should not be used directly.
 
@@ -61,8 +237,10 @@
 
 - Added `showLegendPerDataset` parameter to
   [`plotIndividualTimeProfile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotIndividualTimeProfile.md)
-  and `plotPupulationTimeProfile()` to optionally display separate
-  legend entries for each dataset. This is experimental.
+  and
+  [`plotPopulationTimeProfile()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/plotPopulationTimeProfile.md)
+  to optionally display separate legend entries for each dataset. This
+  is experimental.
 - Improved print outputs for all classes
 - Classes do not inherit from the deprecated `Printable` class from the
   [ospsuite.utils](https://github.com/open-systems-pharmacology/OSPSuite.RUtils)
@@ -130,7 +308,7 @@
 
 - The package gains
   [openxlsx](https://ycphs.github.io/openxlsx/index.html) and
-  `{lifecyle}` dependencies.
+  [lifecycle](https://lifecycle.r-lib.org/) dependencies.
 - Added a function
   [`getSteadyState()`](https://www.open-systems-pharmacology.org/OSPSuite-R/dev/reference/getSteadyState.md)
   to calculate steady state values for simulations. This function is of
@@ -184,7 +362,7 @@
 - `DataCombined$toDataFrame()` shows the data in the order as the data
   sets were added and not alphabetically sorted.
 - `DataCombined$removeGroupAssignment()` does not show a warning if
-  specified name is not present in the `DataCombined`.  
+  specified name is not present in the `DataCombined`.
 - `DataCombined$removeGroupAssignment()` does not produce an error if
   specified names are not unique.
 - Fixed Passing font size options from plotConfiguration objects to tlf
@@ -203,8 +381,9 @@
   deprecated and replaced by `xAxisLimits` and `yAxisLimits`. Use them
   to zoom in the plot while preserving all data points. Use
   `xValuesLimits` and `yValuesLimits` to filter out data point outside
-  of these range. More detailed explanations
-  [here](https://ggplot2.tidyverse.org/reference/coord_cartesian.html#ref-examples).
+  of these range. More detailed explanations in the [ggplot2
+  coord_cartesian
+  documentation](https://ggplot2.tidyverse.org/reference/coord_cartesian.html#ref-examples).
 - `addSimulationResults` and `addDataSets` methods of the `DataCombined`
   class now support an optional `silent` argument which silences the
   checks for data set names. If you expect to replace data sets in
