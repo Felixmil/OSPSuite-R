@@ -56,11 +56,11 @@ A new `Molecule` object.
 ## Examples
 
 ``` r
-sim <- loadSimulation(system.file("extdata", "Aciclovir.pkml", package = "ospsuite"))
+sim <- loadSimulation(system.file("extdata", "simple.pkml", package = "ospsuite"))
 
 # looking at a reference to `.NET` simulation object
 sim$pointer
-#> <pointer: 0x559a96a67840>
+#> <pointer: 0x557fcba99060>
 
 # create a new instance of `DotNetWrapper` class using this reference
 DotNetWrapper$new(sim)
