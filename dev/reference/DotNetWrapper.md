@@ -60,7 +60,7 @@ sim <- loadSimulation(system.file("extdata", "simple.pkml", package = "ospsuite"
 
 # looking at a reference to `.NET` simulation object
 sim$pointer
-#> <pointer: 0x560e55325660>
+#> <pointer: 0x55610d7c28e0>
 
 # create a new instance of `DotNetWrapper` class using this reference
 DotNetWrapper$new(sim)

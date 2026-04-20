@@ -24,16 +24,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/open-systems-pharmacology/ospsuite-r/blob/ci/prioritize-ppm-repo/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/open-systems-pharmacology/ospsuite-r/blob/test/workflows-extra-pkg/DESCRIPTION)
 
 Sevestre M, Balazki P, Solodenko J, Patil I, MIL F (2026). *ospsuite: R
-package to manipulate OSPSuite Models*. R package version 12.4.2.9009,
+package to manipulate OSPSuite Models*. R package version 12.4.2.9014,
 <https://github.com/open-systems-pharmacology/ospsuite-r>.
 
     @Manual{,
       title = {ospsuite: R package to manipulate OSPSuite Models},
       author = {Michael Sevestre and Pavel Balazki and Juri Solodenko and Indrajeet Patil and Felix MIL},
       year = {2026},
-      note = {R package version 12.4.2.9009},
+      note = {R package version 12.4.2.9014},
       url = {https://github.com/open-systems-pharmacology/ospsuite-r},
     }
